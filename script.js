@@ -5,7 +5,8 @@
 /**
  * רשימת המדריכים. כל פריט יוצג ככרטיס, לפי הסדר.
  *  title       — שם המדריך
- *  description — תיאור קצר (שורה אחת)
+ *  description — תיאור קצר. כדי שכמה מילים לא ייחתכו בין שורות,
+ *                מחברים אותן ב-  במקום רווח, למשל: "שלב אחרי שלב"
  *  icon        — שם אייקון מתוך ICONS שבהמשך הקובץ:
  *                home | family | will | coins | layers | scale | key | building | document | bell
  *  url         — כתובת הקישור (כרגע "#" — להחליף בכתובת האמיתית)
@@ -26,14 +27,14 @@ const GUIDES = [
   },
   {
     title: "מדריך התראות בטאבו",
-    description: "כך תפעילו את שירות ההתראות של הטאבו, שלב אחרי שלב",
+    description: "כך תפעילו את שירות ההתראות של הטאבו, שלב אחרי שלב",
     icon: "bell",
     url: "assets/guides/tabu-alerts-guide.pdf",
     featured: false,
   },
   {
     title: "מדריך העברה בין-דורית",
-    description: "להעביר את הרכוש לדור הבא בלי סכסוכים ובלי מס מיותר",
+    description: "להעביר את הרכוש לדור הבא בלי סכסוכים ובלי מס מיותר",
     icon: "family",
     url: "",
     featured: false,

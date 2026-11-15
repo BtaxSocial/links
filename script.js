@@ -13,6 +13,8 @@
  *                למשל "assets/guides/rental.pdf". כרטיס שמפנה לקובץ (PDF וכו')
  *                יוריד את הקובץ ויציג אייקון הורדה במקום חץ.
  *  featured    — true = כרטיס מודגש בזהב
+ *  comingSoon  — true = כרטיס "בקרוב": לא לחיץ, עם תווית "בקרוב" במקום חץ.
+ *                כשהמדריך מוכן: מוחקים את השורה הזו וממלאים url.
  */
 const GUIDES = [
   {
@@ -24,10 +26,18 @@ const GUIDES = [
   },
   {
     title: "מדריך התראות בטאבו",
-    description: "הגנה על הדירה מפני רישום במרמה",
+    description: "כך תפעילו את שירות ההתראות של הטאבו, שלב אחרי שלב",
     icon: "bell",
     url: "assets/guides/tabu-alerts-guide.pdf",
     featured: false,
+  },
+  {
+    title: "מדריך העברה בין-דורית",
+    description: "להעביר את הרכוש לדור הבא בלי סכסוכים ובלי מס מיותר",
+    icon: "family",
+    url: "",
+    featured: false,
+    comingSoon: true,
   },
   {
     title: "לאתר של עו״ד אבי בקר",
@@ -128,6 +138,18 @@ function renderGuides() {
   const list = document.getElementById("guides");
   if (!list) return;
   list.innerHTML = GUIDES.map((g) => {
+    if (g.comingSoon) {
+      return (
+        `<li><div class="card card--soon" aria-label="${escapeHtml(g.title + " – " + g.description + " (בקרוב)")}" role="group">` +
+        `<span class="card__icon">${svgIcon(g.icon, "icon")}</span>` +
+        `<span class="card__text">` +
+        `<span class="card__title">${escapeHtml(g.title)}</span>` +
+        `<span class="card__desc">${escapeHtml(g.description)}</span>` +
+        `</span>` +
+        `<span class="card__badge" aria-hidden="true">בקרוב</span>` +
+        `</div></li>`
+      );
+    }
     const cls = "card" + (g.featured ? " card--featured" : "");
     const file = isFile(g.url);
     const attrs = file

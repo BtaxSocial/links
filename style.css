@@ -279,6 +279,44 @@ a {
   transition-duration: 0.08s;
 }
 
+/* כרטיס "בקרוב" — לא לחיץ */
+.card--soon {
+  cursor: default;
+  border-style: dashed;
+  border-color: rgba(216, 182, 106, 0.32);
+  background: linear-gradient(180deg, rgba(20, 27, 38, 0.6) 0%, rgba(10, 16, 26, 0.7) 100%);
+  box-shadow: none;
+}
+
+.card--soon .card__icon,
+.card--soon .card__title {
+  opacity: 0.72;
+}
+
+.card--soon .card__desc {
+  opacity: 0.8;
+}
+
+.card--soon:hover,
+.card--soon:active {
+  transform: none;
+  border-color: rgba(216, 182, 106, 0.32);
+  box-shadow: none;
+}
+
+.card__badge {
+  flex: none;
+  padding: 4px 10px;
+  border: 1px solid rgba(216, 182, 106, 0.6);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--gold);
+  background: rgba(216, 182, 106, 0.08);
+  white-space: nowrap;
+}
+
 /* ---------- תחתית ---------- */
 .footer {
   margin-top: 30px;

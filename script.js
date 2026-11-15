@@ -55,10 +55,8 @@ const GUIDES = [
  * לוואטסאפ: "https://wa.me/972XXXXXXXXX" (מספר בפורמט בינלאומי, בלי 0 ובלי מקפים)
  */
 const SOCIALS = [
-  { label: "אתר האינטרנט", icon: "globe", url: "https://www.abecker-law.co.il/" },
   { label: "WhatsApp", icon: "whatsapp", url: "#" }, // TODO: https://wa.me/972...
   { label: "Facebook", icon: "facebook", url: "https://www.facebook.com/bybqr.132528/?locale=he_IL" },
-  { label: "YouTube", icon: "youtube", url: "https://www.youtube.com/@avi_becker/shorts" },
   { label: "Instagram", icon: "instagram", url: "https://www.instagram.com/avi.becker.lawyer/" },
   { label: "TikTok", icon: "tiktok", url: "https://www.tiktok.com/@abeckerlaw" },
 ];

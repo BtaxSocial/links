@@ -33,7 +33,7 @@ const GUIDES = [
     title: "לאתר של עו״ד אבי בקר",
     description: "משרד עורכי דין אברהם בקר",
     icon: "globe",
-    url: "https://www.b-tax.co.il/",
+    url: "https://www.abecker-law.co.il/",
     featured: true,
   },
 ];
@@ -44,7 +44,7 @@ const GUIDES = [
  * לוואטסאפ: "https://wa.me/972XXXXXXXXX" (מספר בפורמט בינלאומי, בלי 0 ובלי מקפים)
  */
 const SOCIALS = [
-  { label: "אתר האינטרנט", icon: "globe", url: "https://www.b-tax.co.il/" },
+  { label: "אתר האינטרנט", icon: "globe", url: "https://www.abecker-law.co.il/" },
   { label: "WhatsApp", icon: "whatsapp", url: "#" }, // TODO: https://wa.me/972...
   { label: "Facebook", icon: "facebook", url: "https://www.facebook.com/bybqr.132528/?locale=he_IL" },
   { label: "YouTube", icon: "youtube", url: "https://www.youtube.com/@avi_becker/shorts" },

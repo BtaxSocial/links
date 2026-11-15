@@ -16,7 +16,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800&display=swap">
-  <link rel="stylesheet" href="style.css?v=8">
+  <link rel="stylesheet" href="style.css?v=9">
+  <script>
+    /* Samsung Internet מחשיך תמונות, גרדיאנטים וטקסט-גרדיאנט במצב לילה גם בעמוד כהה.
+       בדפדפן הזה מציגים את הלוגו, הכותרת והכפתור הזהוב בזהב אחיד שאינו מוחשך. (?samsung=1 לבדיקה) */
+    if (/SamsungBrowser/i.test(navigator.userAgent) || /[?&]samsung=1/.test(location.search)) {
+      document.documentElement.classList.add("is-samsung");
+    }
+  </script>
 </head>
 <body>
   <!-- רקע דקורטיבי -->
@@ -24,7 +31,20 @@
 
   <main class="page">
     <header class="hero">
-      <img class="hero__logo" src="assets/logo.svg" width="132" height="113" alt="לוגו AB של עו״ד אברהם בקר">
+      <svg class="hero__logo" viewBox="0 0 1684.249 1438.711" width="132" height="113" role="img" aria-label="לוגו AB של עו״ד אברהם בקר">
+        <defs>
+          <linearGradient id="logoGold" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#F3DFA2"/>
+            <stop offset=".45" stop-color="#D8B66A"/>
+            <stop offset="1" stop-color="#A9823E"/>
+          </linearGradient>
+        </defs>
+        <g class="hero__logo-shape" transform="translate(-14125.991 10325.716)" fill="url(#logoGold)">
+          <path d="M14125.992-8888.934H14533.8v-18.881s-96.289-1.887-128.385-50.975,0-145.379,0-145.379l345.506-887.369,169.924,419.141,198.240-41.535-292.643-711.785h-18.879l-497.039,1269.828s-36.939,67.629-81.309,104.445-103.227,43.629-103.227,43.629Z" transform="translate(-0.001 0.001)"/>
+          <path d="M14351.553-9205.958h24.545s55.7-116.113,181.248-194.465,320.963-118.945,320.963-118.945,295.945-54.754,456.9-139.714,181.023-178.23,186.914-200.129,41.535-166.146-26.434-271.875-181.861-132.766-195.389-137.6-137.8-22.373-239.5-22.373-271.537,10.17-271.537,10.17l15.416,32.742s168.205-8.382,268.1,9.439,151.986,22.656,217.123,117.058,43.109,216.738,30.209,262.435-43.439,100-137.309,168.753c-42.053,30.8-73.6,47.959-111.035,60.8-45.545,15.629-100.4,28.36-193.453,47.981-168.566,35.547-225.146,38.232-356.834,132.161S14351.553-9205.958,14351.553-9205.958Z" transform="translate(121.827 18.721)"/>
+          <path d="M14681.441-9716.947l198.242-39.648,169.77,475.779s30.832,71.746,77.561,71.746,103.369-29.736,147.266-117.057,43.152-207.975,38.068-234.414-14.939-95.518-81.492-156.406-200.725-87.674-200.725-87.674,60.539-16.168,96.883-31.271,54.752-26.432,54.752-26.432,141.6,22.182,226.563,98.176,108.473,165.164,113.281,205.795,16.52,133.578-50.977,232.227-176.926,158.091-216.574,171.308-127.045,17.53-127.045,17.530h-473.893v-26.469s105.729,10.383,154.818-18.881,34.012-75.855,26.383-98.178S14681.441-9716.947,14681.441-9716.947Z" transform="translate(284.71 250.284)"/>
+        </g>
+      </svg>
       <h1 class="hero__title">אברהם בקר</h1>
       <p class="hero__subtitle">מדריכים, הסברים וכלים שימושיים</p>
 
@@ -53,6 +73,6 @@
     </footer>
   </main>
 
-  <script src="script.js?v=8"></script>
+  <script src="script.js?v=9"></script>
 </body>
 </html>

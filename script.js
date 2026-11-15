@@ -7,7 +7,7 @@
  *  title       — שם המדריך
  *  description — תיאור קצר (שורה אחת)
  *  icon        — שם אייקון מתוך ICONS שבהמשך הקובץ:
- *                home | family | will | coins | layers | scale | key | building | document
+ *                home | family | will | coins | layers | scale | key | building | document | bell
  *  url         — כתובת הקישור (כרגע "#" — להחליף בכתובת האמיתית)
  *                להורדת קובץ: שמים את הקובץ בתיקייה assets/guides וכותבים את הנתיב,
  *                למשל "assets/guides/rental.pdf". כרטיס שמפנה לקובץ (PDF וכו')
@@ -17,9 +17,16 @@
 const GUIDES = [
   {
     title: "מדריך שכירות",
-    description: "הסברים חשובים לשוכרים ומשכירים",
+    description: "מה לבדוק לפני שמשכירים את הדירה",
     icon: "home",
-    url: "#",
+    url: "assets/guides/landlords-guide.pdf",
+    featured: false,
+  },
+  {
+    title: "מדריך התראות בטאבו",
+    description: "הגנה על הדירה מפני רישום במרמה",
+    icon: "bell",
+    url: "assets/guides/tabu-alerts-guide.pdf",
     featured: false,
   },
   {
@@ -91,6 +98,8 @@ const ICONS = {
     '<path d="M4 21V4.5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1V21"/><path d="M15 9.5h4a1 1 0 0 1 1 1V21M2.5 21h19"/><path d="M7.5 7.5h1M10.5 7.5h1M7.5 11h1M10.5 11h1M7.5 14.5h1M10.5 14.5h1M8.5 21v-3h2v3"/>',
   document:
     '<path d="M14 3.5H6.5a1 1 0 0 0-1 1v15a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8z"/><path d="M14 3.5V8h4.5M8.5 12.5h7M8.5 16h5"/>',
+  bell:
+    '<path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/><path d="M12 3v2"/>',
   chevron: '<path d="m14.5 5.5-6.5 6.5 6.5 6.5"/>',
   download: '<path d="M12 4v11M7.5 10.5 12 15l4.5-4.5M5 19.5h14"/>',
 
@@ -143,7 +152,7 @@ function renderGuides() {
     const cls = "card" + (g.featured ? " card--featured" : "");
     const file = isFile(g.url);
     const attrs = file
-      ? `href="${escapeHtml(g.url)}" download aria-label="${escapeHtml(g.title + " – " + g.description + " (הורדת קובץ)")}"`
+      ? `href="${escapeHtml(g.url)}" download="${escapeHtml(g.title + " - עו״ד אבי בקר." + g.url.match(FILE_RE)[1].toLowerCase())}" aria-label="${escapeHtml(g.title + " – " + g.description + " (הורדת קובץ)")}"`
       : linkAttrs(g.url);
     return (
       `<li><a class="${cls}" ${attrs}>` +

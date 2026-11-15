@@ -21,7 +21,7 @@ assets/
 - **`GUIDES`**: רשימת המדריכים. לכל מדריך יש `title`, `description`, `icon`, `url`, `featured`.
   - כדי להוסיף מדריך, מעתיקים בלוק `{ ... },` קיים ומשנים אותו. הכרטיס נוצר אוטומטית.
   - `featured: true` מציג את הכרטיס בהדגשה זהובה.
-  - אייקונים זמינים: `home`, `family`, `will`, `coins`, `layers`, `scale`, `key`, `building`, `document`.
+  - אייקונים זמינים: `home`, `family`, `will`, `coins`, `layers`, `scale`, `key`, `building`, `document`, `bell`.
 - **`SOCIALS`**: קישורי התחתית (אתר, WhatsApp, YouTube, Instagram, TikTok).
   - WhatsApp: `https://wa.me/972501234567` (מספר בפורמט בינלאומי, בלי 0 בהתחלה ובלי מקפים).
 

@@ -117,6 +117,19 @@ function svgIcon(name, className) {
   );
 }
 
+/* ב-Samsung Internet מצב לילה מעמעם מסגרות ורקעים, אבל לא קווי SVG —
+   לכן שם החץ מוצג בתוך עיגול SVG, כדי שיהיה ברור שהכרטיס לחיץ. */
+const IS_SAMSUNG = document.documentElement.classList.contains("is-samsung");
+
+function arrowIcon(name) {
+  if (!IS_SAMSUNG) return svgIcon(name, "icon");
+  return (
+    `<svg class="icon icon--ring" viewBox="-7 -7 38 38" fill="none" stroke="currentColor" ` +
+    `stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">` +
+    `<circle cx="12" cy="12" r="18"/>${ICONS[name]}</svg>`
+  );
+}
+
 function escapeHtml(str) {
   return String(str).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 }
@@ -161,7 +174,7 @@ function renderGuides() {
       `<span class="card__title">${escapeHtml(g.title)}</span>` +
       `<span class="card__desc">${escapeHtml(g.description)}</span>` +
       `</span>` +
-      `<span class="card__arrow${file ? " card__arrow--download" : ""}">${svgIcon(file ? "download" : "chevron", "icon")}</span>` +
+      `<span class="card__arrow${file ? " card__arrow--download" : ""}">${arrowIcon(file ? "download" : "chevron")}</span>` +
       `</a></li>`
     );
   }).join("");
